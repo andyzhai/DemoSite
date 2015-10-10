@@ -39,6 +39,7 @@
     <target name="tomcat" depends="start-db">
         <delete dir="war/WEB-INF/lib"/>
         <artifact:mvn mavenHome="${maven.home}" fork="true">
+            <jvmarg value="-Dmaven.multiModuleProjectDirectory=.." />
             <jvmarg value="-XX:MaxPermSize=256M" />
             <jvmarg value="-Xmx512M" />
             <jvmarg value="-Xdebug" />
